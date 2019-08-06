@@ -3,7 +3,7 @@ package com.Bookmyshow.Driver;
 public class Seat {
     int Seatnumber;
     boolean isreserved;
-    int[] seat=new int[10];
+
 
     Seat(int Seatnumber,boolean isreserved){
         this.Seatnumber=Seatnumber;

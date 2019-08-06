@@ -13,12 +13,12 @@ public class Theatre {
 
     //Adding default theatres
 
-    Theatre(List Theatres){
+    Theatre(List Theatres,int theatreid){
 
-        Theatre theatre1=new Theatre(1,"Sterling");
-      //  Theatre theatre2=new Theatre(2,"Shantala");
+        Theatre theatre1=new Theatre(theatreid,"Sterling");
+        //  Theatre theatre2=new Theatre(2,"Shantala");
         Theatres.add(theatre1);
-      //  Theatres.add(theatre2);
+        //  Theatres.add(theatre2);
     }
     String getname()
     {

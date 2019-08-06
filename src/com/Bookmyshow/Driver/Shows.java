@@ -16,11 +16,11 @@ public class Shows {
 
     }
 
-    Shows(List Show, List Theatres)
-    {
-        Shows show1=new Shows("Avengers", "22/2/2019", 200, (Theatre) Theatres.get(0));
-        Show.add(show1);
-    }
+    //  Shows(List Show, List Theatres)
+    //   {
+    //     Shows show1=new Shows("Avengers", "22/2/2019", 200, (Theatre) Theatres.get(0));
+    //     Show.add(show1);
+    // }
     String getsname(){
 
         return sname;

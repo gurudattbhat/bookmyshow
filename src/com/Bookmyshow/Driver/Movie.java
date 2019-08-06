@@ -7,40 +7,41 @@ import java.util.Scanner;
 
 public class Movie {
     static int id = 2;
+    static List<Theatre> Theatres = new ArrayList<Theatre>();
+    static List<Shows> Show = new ArrayList<Shows>();
+    static List<Seat> Seats = new ArrayList<Seat>();
 
+    //Creating arraylist of arraylist to hold seats for different theatres
+
+    static ArrayList<List<Seat>> Theatreslist = new ArrayList<List<Seat>>();
+
+    static List<Customer> Customers = new ArrayList<Customer>();
 
 
     public static void main(String[] args) {
-
-        List<Theatre> Theatres = new ArrayList<Theatre>();
-        List<Shows> Show = new ArrayList<Shows>();
-        List<Seat> Seats = new ArrayList<Seat>();
-        ArrayList<List<Seat>> Theatreslist = new ArrayList<List<Seat>>();
-        List<Customer> Customers = new ArrayList<Customer>();
-
-        Scanner sc = new Scanner(System.in);
-
-
-
-
-        //Adding  default theatre through constructor
-        Seat s1 = new Seat(1, false);
-        Seat s2 = new Seat(2, false);
-        Seat s3 = new Seat(3, false);
-        Seat s4 = new Seat(4, false);
-        Seat s5 = new Seat(5, false);
-        Seat s6 = new Seat(6, false);
+        Scanner sc=new Scanner(System.in);
+        //Adding  default theatre
+        Seat s1 = new Seat(0, false);
+        Seat s2 = new Seat(1, false);
+        Seat s3 = new Seat(2, false);
+        Seat s4 = new Seat(3, false);
+        Seat s5 = new Seat(4, false);
+        Seat s6 = new Seat(5, false);
         Seats.add(s1);
         Seats.add(s2);
         Seats.add(s3);
         Seats.add(s4);
         Seats.add(s5);
         Seats.add(s6);
-        Theatre theatre=new Theatre(Theatres);
+        Theatreslist.add(Seats);
+        Theatre theatre=new Theatre(Theatres,1);
 
 
-        //Adding default show through constructor
-         Shows show=new Shows(Show,Theatres);
+
+        //Adding default show
+        Shows show1 = new Shows("race", "22/3/2019", 200, Theatres.get(0));
+        Show.add(show1);
+
 
 
 
@@ -62,12 +63,12 @@ public class Movie {
                     System.out.println("Theatre id is:" + theatreid + "\n");
                     id++;
                   //  Addseats();
-                    Seat s7 = new Seat(1, false);
-                    Seat s8 = new Seat(2, false);
-                    Seat s9 = new Seat(3, false);
-                    Seat s10 = new Seat(4, false);
-                    Seat s11 = new Seat(5, false);
-                    Seat s12 = new Seat(6, false);
+                    Seat s7 = new Seat(0, false);
+                    Seat s8 = new Seat(1, false);
+                    Seat s9 = new Seat(2, false);
+                    Seat s10 = new Seat(3, false);
+                    Seat s11 = new Seat(4, false);
+                    Seat s12 = new Seat(5, false);
                     Seats.add(s7);
                     Seats.add(s8);
                     Seats.add(s9);
@@ -78,6 +79,7 @@ public class Movie {
 
                     Theatre theatre1 = new Theatre(theatreid, name);
                     Theatres.add(theatre1);
+                    id++;
                     break;
 
 
@@ -99,15 +101,8 @@ public class Movie {
 
 
                 case 3:
-                    for (int i = 0; i < Show.size(); i++) {
-                        int showNumber = i + 1;
-                        System.out.println("Show Number: " + showNumber);
-                        ;
-                        System.out.println("Show Name: " + Show.get(i).getsname());
-                        System.out.println("Show Date: " + Show.get(i).getsdate());
-                        System.out.println("\n");
-                    }
-                    break;
+                     printseat();
+                     break;
 
 
                 case 4:
@@ -117,13 +112,7 @@ public class Movie {
                     String custname = sc.next();
 
                     System.out.println("Available Movies are");
-                    for (int i = 0; i < Show.size(); i++) {
-                        int showNumber = i + 1;
-                        System.out.println("Show Number: " + showNumber);
-                        System.out.println("Show Name: " + Show.get(i).getsname());
-                        System.out.println("Show Date: " + Show.get(i).getsdate());
-                        System.out.println("\n");
-                    }
+                    printseat();
 
                     System.out.println("Select show number");
                     int showNumber = sc.nextInt();
@@ -144,10 +133,18 @@ public class Movie {
 
                     System.out.println("Select any of the available seats");
                     int selectedseat = sc.nextInt();
+
+                    // If user selects already booked seat, throw custom exception
                     if (Theatreslist.get(theatreNumber - 1).get(selectedseat).getseatstatus() == true) {
+                        try {
+                            throw new InvalidseatException("not valid");
+                        } catch (InvalidseatException e) {
+                            System.out.println("This seat is reserved..!! Please select another  seat");
+                        }
                         System.out.println("This seat is not available. Please select any of the available seats");
                     }
 
+                     //If user select valid seat reserve
                     else {
                         Theatreslist.get(theatreNumber - 1).get(selectedseat).reserve();
                         System.out.println("Seat booked successfully");
@@ -158,7 +155,7 @@ public class Movie {
                         System.out.println("--------------------------------------------");
                     }
                     break;
-                    
+
 
                 case 5:
                     System.exit(0);
@@ -172,6 +169,18 @@ public class Movie {
 
 
     }
+    public static void printseat ()
+    {
+        for (int i = 0; i < Show.size(); i++) {
+            int showNumber = i + 1;
+            System.out.println("Show Number: " + showNumber);
+            ;
+            System.out.println("Show Name: " + Show.get(i).getsname());
+            System.out.println("Show Date: " + Show.get(i).getsdate());
+            System.out.println("\n");
+        }
+    }
+
 
 
 
@@ -179,5 +188,5 @@ public class Movie {
 }
 
 
-   
+
 
