@@ -10,18 +10,13 @@ public class Seat {
         this.isreserved=isreserved;
     }
 
+
     boolean getseatstatus(){
         return isreserved;
     }
 
 
 
-    /*setseatstatus(boolean isreserved)
-    {
-        this.isreserved=isreserved;
-    }
-
-     */
     void reserve()
     {
         isreserved=true;

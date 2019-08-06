@@ -101,7 +101,7 @@ public class Movie {
 
 
                 case 3:
-                     printseat();
+                     printshow();
                      break;
 
 
@@ -112,7 +112,7 @@ public class Movie {
                     String custname = sc.next();
 
                     System.out.println("Available Movies are");
-                    printseat();
+                    printshow();
 
                     System.out.println("Select show number");
                     int showNumber = sc.nextInt();
@@ -169,7 +169,7 @@ public class Movie {
 
 
     }
-    public static void printseat ()
+    public static void printshow ()
     {
         for (int i = 0; i < Show.size(); i++) {
             int showNumber = i + 1;

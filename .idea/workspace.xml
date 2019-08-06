@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d11a3f93-da75-439a-bd7c-1af618c32a6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/InvalidseatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/com/Bookmyshow/Driver/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/com/Bookmyshow/Driver/Movie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/com/Bookmyshow/Driver/Seat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/com/Bookmyshow/Driver/Shows.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled/com/Bookmyshow/Driver/Theatre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Seat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Shows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Shows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Theatre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Bookmyshow/Driver/Theatre.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
